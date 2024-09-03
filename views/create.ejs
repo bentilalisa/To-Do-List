@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <div class="container">
+            <%- include("./partials/header.ejs") %>
+            <%- include("./partials/aside.ejs") %>
+        <main>
+            <form action="/create" method="POST" enctype="multipart/form-data">
+                <div>
+                    <h3>New Task</h3>
+                </div>
+                
+                <!-- Title -->
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                
+                <!-- Description -->
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                
+                <!-- Due Date -->
+                <div>
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate" required>
+                </div>
+                
+                <!-- Priority -->
+                <div>
+                    <label for="priority">Priority:</label>
+                    <div class="select-wrapper">
+                        <select id="priority" name="priority" required>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Status -->
+                <div>
+                    <label for="status">Status:</label>
+                    <div class="select-wrapper">
+                        <select id="status" name="status" required>
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Assignee -->
+                <div>
+                    <label for="assignee">Assignee:</label>
+                    <input type="text" id="assignee" name="assignee" required>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <label for="category">Category:</label>
+                    <div class="select-wrapper">
+                        <select id="category" name="category" required>
+                            <%categories.forEach(category => {%>
+                                    <option value="<%=category._id%>"><%=category.name%></option>
+                            <%})%>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Attachments -->
+                <div>
+                    <label for="attachments">Attachments:</label>
+                    <input type="file" id="attachments" name="attachments" multiple>
+                </div>
+
+                <div id="fileList">
+                    <p>No files selected</p>
+                </div>
+                
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </main>
+        <%- include("./partials/footer.ejs") %>
+    </div>
+</body>
+</html>

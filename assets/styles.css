@@ -1,0 +1,335 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto auto 50px;
+}
+
+.container header {
+    display: grid;
+    background: #333333;
+    color: #ffffff;
+    grid-column: 1 / 13;
+    grid-row: 1/2;
+}
+
+.container aside {
+    grid-row: 2/5;
+    grid-column: 1/3;
+    background: #f6f6f6;
+    min-height: 100vh;
+}
+
+.container main {
+    grid-column: 3/13;
+    grid-row: 2/4;
+    padding: 30px 75px;
+}
+
+.container main .single {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-decoration: none; 
+    color: #333333;
+    margin-top: 30px;
+    border-bottom: 2px solid #f6f6f6
+}
+
+.container main .single:hover {
+    background: linear-gradient(to right, #ffffff, #f6f6f6, #ffffff);
+    border-bottom: 0 none transparent;
+}
+
+.container main .single p {
+    margin: 0;
+    font-size: small;
+}
+
+.container main .single h3 {
+    grid-column: 1/3;
+}
+
+.container main .single .status {
+    grid-column: 1/3;
+}
+
+.container main .single .priority {
+    grid-column: 1/2;
+}
+
+.container main .single .due-date {
+    grid-column: 2/3;
+    justify-self: end;
+    font-size: x-small
+}
+
+.container main .single .due-date img {
+    vertical-align: bottom;
+    margin-right: 7px;
+}
+
+.container footer {
+    grid-row: 4/5;
+    grid-column: 3/13;
+    text-align: center;
+    color: #f6f6f6; 
+}
+
+.container header .logo {
+    justify-self: start;
+    padding: 5px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.container header .logo img {
+    max-height: 40px;
+    vertical-align: middle;
+}
+
+.container aside .category {
+    padding: 10px;
+    align-self: self-start;
+}
+
+.container aside .category p {
+    font-weight: bold;
+}
+
+.container aside .category ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.container aside .category a {
+    text-decoration: none;
+    display: block;
+    color: #333333;
+}
+
+.container aside .category a:hover {
+    color: #999999
+}
+
+.container header nav {
+    justify-self: end;
+    grid-column: 3/13; 
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 15px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav ul a:hover {
+    color: #999999;
+}
+
+.container main .details table {
+    justify-self: center;
+    margin: 50px auto;
+    max-width: 75%;
+}
+
+.container main .details table td {
+    padding: 10px 65px;
+    text-align: justify;
+}
+
+.container main .details table td:nth-child(2n + 1) {
+    font-weight: bold;
+}
+
+.container main .details table td:nth-child(2n) {
+    font-size: small;
+}
+
+.container main .details table thead tr th {
+    background: linear-gradient(90deg, #ffffff, #f3f3f3, #ffffff); 
+    padding: 10px 0;
+}
+
+.container main form div button {
+   width: 75px;
+   border: 0 none transparent;
+   min-height: 25px;
+   border-radius: 5px;
+   background: #f3f3f3;
+}
+
+.container main form div button:hover {
+    cursor: pointer;
+    background: #dadada;
+  }
+
+.container main .details table tfoot a {
+    text-decoration: none;
+    color: #000000;
+    display: inline-block;
+    width: 75px;
+    height: 25px;
+    background: #f3f3f3;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container main .details table tfoot a:hover {
+    background: #dadada;
+}
+
+ .container main .details .attachment {
+    color: #000000;
+    display: block;
+    padding: 5px 0;
+ }
+
+ .container main .details .attachment:hover {
+    color: #999999;
+ }
+
+ .container main form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, minmax(auto, auto));
+ }
+
+ .container main form div {
+    justify-self: center;
+    width: 50%;
+    margin: 6px 0;
+ }
+
+ .container main form div label,  
+ .container main form div input,
+ .container main form div textarea {
+    width: 100% !important;
+ }
+
+ .container main form div label {
+    font-weight: bold;
+    font-size: small;
+ }
+
+ .container main form div input,  
+ .container main form div textarea {
+    padding: 6px !important;
+    border: 1px solid #dadada;
+    border-radius: 3px;
+    background: transparent;
+ }
+
+ .container main form div textarea {
+    min-height: 50px;
+ }
+
+ .container main form div h3 {
+    font-weight: bold;
+    padding: 10px 0;
+    background: linear-gradient(to right, #ffffff, #f3f3f3, #ffffff);
+    text-align: center;
+ }
+
+ .container main form div .select-wrapper select {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+ }
+
+ .select-wrapper {
+    display: inline-block;
+    position: relative;
+    padding: 6px; 
+    background-color: #fff; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    min-width: 100%;
+}
+
+#fileList {
+    font-size: small;
+}
+
+
+.popup {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.popup-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-not-found {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(auto, auto));
+}
+
+.page-not-found p, .page-not-found h1 {
+    align-self: self-start;
+    justify-self: center;
+}
+
+.page-not-found p a {
+    color: #000000
+}
+
+.page-not-found p a:hover {
+    color: #999999
+}
+
+
+/* Styles for small screens (mobile devices) */
+@media (max-width: 600px) {
+
+}
+
+/* Styles for medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+}
+

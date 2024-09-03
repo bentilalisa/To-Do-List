@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <div class="container">
+            <%- include("./partials/header.ejs") %>
+            <%- include("./partials/aside.ejs") %>
+        <main>
+            <div class="details">
+                <table>
+                    <thead>
+                        <tr>                            
+                            <th colspan="2">
+                                Task Details
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Title</td>
+                            <td><%= task.title %></td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td><%= task.description %></td>
+                        </tr>
+                        <tr>
+                            <td>Priority</td>
+                            <td><%= task.priority %></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><%= task.status %></td>
+                        </tr>
+                        <tr>
+                            <td>Assignee</td>
+                            <td><%= task.assignee %></td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td><%= task.category.name %></td>
+                        </tr>
+                        <tr>
+                            <td>Attachements</td>
+                            <td>
+                                <% task.attachments.forEach(attachment => { %>
+                                    <a href="#" class="attachment" onclick="openAttachment('<%= attachment.link.replace(/\\/g, '/') %>')"><%= attachment.link %></a>
+                                <% }) %>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>                            
+                            <td colspan="2">
+                                <a class="edit-task" href="/edit/<%=task._id%>">Edit</a>
+                                &nbsp;&#124;&nbsp;
+                                <a class="delete-task" href="#" data-doc="<%= task._id %>">Delete</a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+        </div>
+        </main>
+        <%- include("./partials/popup-window.ejs") %>
+        <%- include("./partials/footer.ejs") %>
+    </div>
+
+    <script>
+        
+        //Delete task
+        const task_delete = document.querySelector('.delete-task');
+
+        task_delete.addEventListener('click', (e) => {
+            
+        const endpoint = `/delete/${task_delete.dataset.doc}`;
+
+        fetch(endpoint, {method: 'DELETE',})
+        .then(response => response.json())
+        .then(data => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+        });
+    </script>
+</body>
+</html>

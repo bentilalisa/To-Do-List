@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <div class="container">
+            <%- include("./partials/header.ejs") %>
+            <%- include("./partials/aside.ejs") %>
+        <main>
+            <% if (tasks.length > 0) { %>
+                <% tasks.forEach(task => { %>
+                  <a class="single" href="/<%= task._id %>">
+                    <h3><%= task.title %></h3>
+                    <p class="status">Status&#58;&nbsp;<%= task.status %></p>
+                    <p class="priority">Priority&#58;&nbsp;<%= task.priority %></p>
+                    <p class="due-date"><img src="/calendar.svg" alt="calendar">Due Date&#58;&nbsp;<%=task.dueDate.toLocaleDateString()%></p>
+                  </a>
+                <% }) %>
+              <% } else { %>
+                <p>There are no tasks to display...</p>
+              <% } %>
+        </main>
+        <%- include("./partials/footer.ejs") %>
+    </div>
+</body>
+</html>

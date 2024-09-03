@@ -14,7 +14,7 @@ This project is a task management application built with Node.js and EJS templat
 
 **Installation**
 
-    _Clone the repository: _
+    1. Clone the repository:
     
     git clone https://github.com/bentilalisa/to-do-list.git
 
@@ -22,17 +22,17 @@ This project is a task management application built with Node.js and EJS templat
 
     cd task-management-project
     
-    _Install dependencies:_
+    2. Install dependencies:
     
     npm install
     
-    _Set up the environment variables:_
+    3. Set up the environment variables:
 
     Create a .env file in the root directory.
     Add the necessary environment variables (e.g., PORT, DATABASE_URL).
     
-   _ Start the application:_
-    
+**Start the application:** 
+
     npm start
     
 **Usage**

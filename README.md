@@ -39,7 +39,7 @@ This project is a task management application built with Node.js and EJS templat
     
     Once the application is up and running, you can:
 
-    Access the task management interface via http://localhost:4000 in your browser.
+    Access the task management interface via http://localhost:3000 in your browser.
     Create, list, and update tasks through the web interface, including setting and changing their status.
     
 **Contributing**
